@@ -61,10 +61,9 @@ export default CheckoutPage
 
 
 export  const getServerSideProps: GetServerSideProps = async ({query}) => {
-    const { username, cost, memo } = query
+    const { username, price, item } = query
 
-    const res = await axios.get(`https://nano.to/${username}?request=${cost}&memo=${memo}`)
-    console.log("=== rest", res.data)
+    const res = await axios.get(`https://nano.to/${username}?request=${price}&memo=${item}`)
     
     return {
       props: {
